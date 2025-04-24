@@ -34,14 +34,14 @@ A clean and modular Laravel 12 application where users can register, manage thei
 ![Login](public/images/login.png)
 
 
-### 👤 Profile Edit Page
+### 👤 User Registratiopn Page
 ![Register](public/images/register.png)
 
-### ✍️ Skill Management
-![Register](public/images/register.png)
+### ✍️ Profile and Skill Management
+![Register](public/images/edit.png)
 
 ### 📄 PDF Download View
-![Register](public/images/register.png)
+![Register](public/images/pdf.png)
 
 ### 👤 Dashboard Page
 ![Dashboard](public/images/dashboard.png)
