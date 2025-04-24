@@ -34,7 +34,7 @@ A clean and modular Laravel 12 application where users can register, manage thei
 ![Login](public/images/login.png)
 
 
-### 👤 User Registratiopn Page
+### 👤 User Registration Page
 ![Register](public/images/register.png)
 
 ### ✍️ Profile and Skill Management
@@ -101,14 +101,23 @@ A clean and modular Laravel 12 application where users can register, manage thei
    php artisan passport:client
 
    ```
+7. Install DOMPDF Package:
+   
+   ### Step 1: Install DOMPDF Package
+   
+1. **Install DOMPDF Package via Composer**:
 
-7. Serve the application:
+   ```bash
+  composer require barryvdh/laravel-dompdf
+
+   
+8. Serve the application:
 
    ```bash
    php artisan serve
    ```
 
-Visit `http://localhost:8000` to start using the NoteKeeper App.
+Visit `http://localhost:8000` to start using the  App.
 
 ## 📁 Project Structure
 
