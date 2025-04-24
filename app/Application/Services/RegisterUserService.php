@@ -1,5 +1,5 @@
 <?php
-
+//this is code for registeruserservice.php
 namespace App\Application\Services;
 
 use App\Models\User;
