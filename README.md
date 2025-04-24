@@ -6,118 +6,116 @@ A clean and modular Laravel 12 application where users can register, manage thei
 
 ## 🚀 Features
 
-- 🔐 **User Registration & Login** (Laravel Breeze or custom via Passport)
-- 👤 **User Profile Management** (update name, contact, address, etc.)
-- 🛠️ **Skill Management** (add/edit/delete skills)
-- 📄 **Generate PDF** of user details and skills
-- 🎯 Built using **Clean Architecture** (Use Cases, DTOs, Services, etc.)
-- 🎨 Clean UI using **Blade & Tailwind CSS**
+-   🔐 **User Registration & Login** (Laravel Passport for API Authentication)
+-   👤 **User Profile Management** (update name, contact, address, etc.)
+-   🛠️ **Skill Management** (add/edit/delete skills)
+-   📄 **Generate PDF** of user details and skills
+-   🎯 Built using **Clean Architecture** (Use Cases, DTOs, Services, etc.)
+-   🎨 Clean UI using **Blade & Tailwind CSS**
 
 ---
 
 ## 🏗️ Tech Stack
 
-- **Framework**: Laravel 12 (PHP 8.2)
-- **Architecture**: Clean Architecture
-- **Authentication**: Laravel Passport (Personal Access Tokens)
-- **Database**: MySQL
-- **Templating**: Blade
-- **Styling**: Tailwind CSS
-- **PDF Generation**: DomPDF
+-   **Framework**: Laravel 12 (PHP 8.2+)
+-   **Architecture**: Clean Architecture
+-   **API Authentication**: Laravel Passport (Personal Access Tokens)
+-   **Database**: MySQL
+-   **Templating**: Blade
+-   **Styling**: Tailwind CSS
+-   **PDF Generation**: DomPDF (`barryvdh/laravel-dompdf`)
 
 ---
 
 ## 📸 Screenshots
 
-
 ### 🔐 Login Page
-![Login](public/images/login.png)
-
+![Login Page](public/images/login.png)
 
 ### 👤 User Registration Page
-![Register](public/images/register.png)
+![Registration Page](public/images/register.png)
 
 ### ✍️ Profile and Skill Management
-![Register](public/images/edit.png)
+![Profile Editing Page](public/images/edit.png)
 
 ### 📄 PDF Download View
-![Register](public/images/pdf.png)
+![Generated PDF Preview](public/images/pdf.png)
 
 ### 👤 Dashboard Page
-![Dashboard](public/images/dashboard.png)
+![User Dashboard](public/images/dashboard.png)
+
 ---
 
+## 🛠️ Installation
 
+1.  **Clone the repository:**
+    *(Replace `your-username/skillshub.git` with the actual repository URL)*
+    ```bash
+    git clone https://github.com/your-username/skillshub.git
+    cd skillshub
+    ```
 
+2.  **Install PHP Dependencies:**
+    ```bash
+    composer install
+    ```
 
+3.  **Install Node.js Dependencies & Build Assets:**
+    ```bash
+    npm install
+    npm run dev
+    ```
 
-## 🛠️  Installation
+4.  **Set up Environment File:**
+    Copy the example environment file and generate the application key.
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
 
-1. Clone the repository:
+5.  **Configure Database:**
+    Open the `.env` file and update the database connection details:
+    ```env
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=skillshub # Or your preferred database name
+    DB_USERNAME=root      # Or your database username
+    DB_PASSWORD=          # Or your database password
+    ```
 
-   ```bash
-   git clone https://github.com/your-username/notekeeper-app.git
-   cd skillshub
-   ```
+6.  **Run Database Migrations:**
+    ```bash
+    php artisan migrate
+    ```
 
-2. Install dependencies:
+7.  **Install Laravel Passport:**
+    Install the package and generate the necessary keys and clients.
+    ```bash
+    composer require laravel/passport
+    php artisan migrate # Passport migrations (if not already run)
+    php artisan passport:install --uuids
+    # OR if you only need personal access tokens and want to generate manually:
+    # php artisan passport:keys
+    # php artisan passport:client --personal
+    ```
+    *Ensure the `User` model uses the `Laravel\Passport\HasApiTokens` trait.*
 
-   ```bash
-   composer install
-   npm install && npm run dev
-   ```
+8.  **Install DomPDF:**
+    Install the package for PDF generation. The service provider and facade are usually auto-discovered.
+    ```bash
+    composer require barryvdh/laravel-dompdf
+    ```
 
-3. Copy `.env` and set up your environment:
+9.  **Serve the Application:**
+    ```bash
+    php artisan serve
+    ```
 
-   ```bash
-   cp .env.example .env
-   php artisan key:generate
-   ```
+Visit `http://localhost:8000` (or the address provided by `php artisan serve`) to start using the SkillsHub App.
 
-4. Configure your `.env` file with your database credentials:
+---
 
-   ```env
-   DB_DATABASE=your_db_name
-   DB_USERNAME=your_username
-   DB_PASSWORD=your_password
-   ```
-
-5. Run migrations:
-
-   ```bash
-   php artisan migrate
-   ```
-
-6. Install and run Laravel Passport:
-
-  ### Step 1: Install Laravel Passport
-
-1. **Install Laravel Passport via Composer**:
-
-   ```bash
-   composer require laravel/passport
-2. **Generate the OAuth clients manually**:
-   ```bash
-   php artisan passport:client
-
-   ```
-7. Install DOMPDF Package:
-   
-   ### Step 1: Install DOMPDF Package
-   
-1. **Install DOMPDF Package via Composer**:
-
-   ```bash
-  composer require barryvdh/laravel-dompdf
-
-   
-8. Serve the application:
-
-   ```bash
-   php artisan serve
-   ```
-
-Visit `http://localhost:8000` to start using the  App.
 
 ## 📁 Project Structure
 
